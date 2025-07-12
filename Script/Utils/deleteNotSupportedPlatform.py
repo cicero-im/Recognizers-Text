@@ -7,8 +7,8 @@ start = time.time()
 def get_input(fname):
     count = 0
     fo = open(fname.split("\\")[-1], "w", encoding="UTF-8")
-    notworkfile = open(r".\count\\" + fname.split("\\")[-1], "r", encoding="UTF-8")
-    sentences = [sentence.strip() for sentence in notworkfile.readlines()]
+    with open(r".\count\\" + fname.split("\\")[-1], "r", encoding="UTF-8") as notworkfile:
+        sentences = [sentence.strip() for sentence in notworkfile.readlines()]
     new_list = []
     with open(fname, "r", encoding="UTF-8-SIG") as load_f:
         load_dict = json.load(load_f)
